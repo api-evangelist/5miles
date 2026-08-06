@@ -1,17 +1,30 @@
 aid: 5miles
 name: 5miles
-description: '5miles is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: '5miles is a hyper-local mobile marketplace for buying and selling used
+  goods — cars, furniture, electronics, fashion, baby and kids items — and for offering
+  local services such as beauty, auto repair and home cleaning. Founded in 2014 in
+  Dallas, Texas by Lucas Lu and acquired by a China-based buyer in 2020, the company
+  runs the 5miles iOS and Android apps, the 5miles.com web marketplace, and the 5miles
+  Dash bidding site. 5miles operates as an end-user consumer product only: it publishes
+  no developer portal, no API reference and no machine-readable specification, and
+  its api.5miles.com host serves the company''s own mobile and web clients rather
+  than third-party integrators.'
+image: https://www.5miles.com/images/logoOrange_nosub.png
 url: https://raw.githubusercontent.com/api-evangelist/5miles/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Marketplace
+- Classifieds
+- E-Commerce
+- Local Commerce
+- Mobile Apps
+- Consumer
+- Second-Hand
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +32,55 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/5miles-domain-security.yml
+- type: LLMsTxt
+  url: llms/5miles-llms.txt
 - type: Website
+  url: https://www.5miles.com/
+- type: About
+  url: https://www.5miles.com/info/about
+- type: Support
+  url: https://www.5miles.com/info/support
+- type: Press
+  url: https://www.5miles.com/press
+- type: News
+  url: https://www.5miles.com/info/news
+- type: TermsOfService
+  url: https://www.5miles.com/info/terms
+- type: PrivacyPolicy
+  url: https://www.5miles.com/info/privacy
+- type: iOSApp
+  url: https://apps.apple.com/us/app/id917554930
+- type: AndroidApp
+  url: https://play.google.com/store/apps/details?id=com.thirdrock.fivemiles
+- type: LinkedIn
+  url: https://www.linkedin.com/company/5miles-llc
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/5miles
+- type: SecondaryMarket
   url: https://forgeglobal.com/5miles_stock/
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 5miles ships only consumer iOS, Android and web marketplace products — /developers,
+    /docs and every OpenAPI, GraphQL, MCP and .well-known discovery path on api.5miles.com
+    return 404, and www.5miles.com/robots.txt disallows all crawlers.
+  evidence:
+  - url: https://www.5miles.com/developers
+    status: 404
+  - url: https://api.5miles.com/openapi.json
+    status: 404
+  - url: https://api.5miles.com/graphql
+    status: 404
+  - url: https://www.5miles.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.5miles.com/robots.txt
+    status: 200
+  checked: '2026-08-05'
+
